@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+:root {
+  --green: #78ff00;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.container {
+  position: relative;
+  padding: 0 100px;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: stretch;
+  
+}
+.container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100%;
+  background: #333;
+  z-index: -2;
+}
+.container:after {
+  content: 'Healthy';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 18vw;
+  font-weight: 700;
+  color: #000;
+  opacity: 0.04;
+  z-index: -2;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+}
+header .logo {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #333;
+  text-decoration: none;
+  font-size: 30px;
+}
+header .logo span {
+  color: var(--green);
+}
+header ul {
+  position: relative;
+  display: flex;
+}
+header ul li {
+  list-style: none;
+  margin: 0 20px;
+}
+header ul li a {
+  position: relative;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  padding: 4px 10px;
+}
+header ul li:nth-child(3) a,
+header ul li:nth-child(4) a {
+  color: #fff;
+}
+header ul li a:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--green);
+  z-index: -1;
+  transition: 0.5s ease-in-out;
+}
+header ul li a:hover:before,
+header ul li a.active:before {
+  width: 50%;
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+.content .bannerText {
+  position: relative;
+  max-width: 60%;
+  margin-right: 50px;
+}
+.content .bannerText div {
+  display: none;
+}
+.content .bannerText div.active {
+  display: initial;
+}
+.content .bannerText h2 {
+  font-size: 54px;
+  text-transform: uppercase;
+  font-weight: 800;
+  line-height: 1.2em;
+  color: #333;
+}
+.content .bannerText p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.8em;
+  margin: 20px 0;
+}
+.content .bannerText a {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: 1px;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 15px;
+}
+.content .bannerText a:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: var(--green);
+  z-index: -1;
+  transition: 0.5s ease-in-out;
+}
+.content .bannerText a:hover:before {
+  width: 100%;
+}
+.content .bannerImg {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background: #000;
+}
+.content .bannerImg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+  opacity: 0;
+}
+.content .bannerImg img.active {
+  opacity: 1;
+}
+.icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 0;
+}
+.icons .sci,
+.icons .controls {
+  position: relative;
+  display: flex;
+}
+.icons .sci li {
+  list-style: none;
+  margin-right: 40px;
+}
+.icons .sci li a i {
+  display: inline-block;
+  font-size: 35px;
+  color: #333;
+  transition: 0.5s ease-in-out;
+}
+.icons .sci li:hover a i {
+  transform: translateY(-10px);
+}
+.icons .controls li {
+  list-style: none;
+  margin-left: 40px;
+  transition: 0.5s ease-in-out;
+}
+.icons .controls li:hover {
+  opacity: 0.2;
+}
+.icons .controls li a i {
+  font-size: 60px;
+  color: #fff;
+}
+.menuIcon {
+  display: none;
+}
+@media (max-width: 992px) {
+  
+}
+@media (max-width: 992px) {
+  .container {
+  padding: 20px 50px;
+}
+  .container:before {
+    display: none;
+  }
+  header {
+    padding: 0;
+  }
+  header ul {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    z-index: 10000;
+    padding: 100px 0;
+  }
+  header.active ul {
+    display: initial;
+  }
+  header ul li {
+    padding: 20px;
+    text-align: center;
+  }
+  header ul li a {
+    color: #333 !important;
+    font-size: 36px;
+  }
+  .icons .controls li a i {
+    color: #333;
+    font-size: 36px;
+  }
+  header ul li a:hover:before,
+  header ul li a.active:before {
+  width: 100%;
+}
+  .content .bannerText h2 {
+    font-size: 30px;
+  }
+  .content {
+    margin-top: 0;
+    flex-direction: column-reverse;
+  }
+  .content .bannerImg {
+    width: 100%;
+    height: 40vh;
+    margin: 20px 0;
+  }
+  .content .bannerText {
+    max-width: 100%;
+    padding-right: 0;
+  }
+  .menuIcon {
+    display: initial;
+    position: fixed;
+    top: 25px;
+    right: 50px;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1000000;
+    background: #fff url(https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png);
+    width: 34px;
+    height: 34px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 6;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    padding: 20px 30px;
+  }
+  .menuIcon {
+    right: 30px;
+  }
+  .icons .controls. {
+    max-width: 40px;
+  }
+}
